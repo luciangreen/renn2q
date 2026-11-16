@@ -1,0 +1,402 @@
+renn2q: 200 inputs and outputs, from real runs (io/ios.pl has the same as Prolog facts).
+
+1. oracle([0,0,0,0,0,0,0,0])
+   => []
+2. run_oracle([mcx([x(0),n(1),n(2)]),mcx([n(0),n(1),x(2)]),mcx([x(0),n(1),x(2)]),mcx([x(0),x(1),x(2)])], 3, 0, 0)
+   => 0
+3. advantage([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
+   => classical(17)
+4. gate_count([mcx([n(0),n(1)])])
+   => counts(mcx(1),x_gates(4))
+5. grover_iterations(8, 207)
+   => 0
+6. oracle([0,0,0,0,0,0,0,0])
+   => []
+7. run_oracle([mcx([n(0),n(1),n(2)]),mcx([x(0),n(1),n(2)]),mcx([x(0),n(1),x(2)])], 3, 5, 0)
+   => 1
+8. advantage([0,0,1,1,1,0,0,0])
+   => grover(queries(1),classical(6))
+9. gate_count([mcx([n(0)]),mcx([x(0)])])
+   => counts(mcx(2),x_gates(2))
+10. grover_iterations(6, 21)
+   => 1
+11. oracle([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
+   => []
+12. run_oracle([], 1, 0, 0)
+   => 0
+13. advantage([0,0])
+   => classical(3)
+14. gate_count([mcx([x(0),n(1),n(2),n(3)])])
+   => counts(mcx(1),x_gates(6))
+15. grover_iterations(3, 6)
+   => 0
+16. oracle([0,1,0,1,0,1,1,1,1,1,0,1,0,0,0,0])
+   => [mcx([x(0),n(1),n(2),n(3)]),mcx([x(0),x(1),n(2),n(3)]),mcx([x(0),n(1),x(2),n(3)]),mcx([n(0),x(1),x(2),n(3)]),mcx([x(0),x(1),x(2),n(3)]),mcx([n(0),n(1),n(2),x(3)]),mcx([x(0),n(1),n(2),x(3)]),mcx([x(0),x(1),n(2),x(3)])]
+17. run_oracle([mcx([n(0),x(1),n(2)]),mcx([n(0),n(1),x(2)]),mcx([n(0),x(1),x(2)])], 3, 6, 1)
+   => 0
+18. advantage([0,0])
+   => classical(3)
+19. gate_count([mcx([n(0),n(1),n(2),n(3)]),mcx([n(0),n(1),n(2),x(3)]),mcx([n(0),x(1),n(2),x(3)]),mcx([x(0),n(1),x(2),x(3)])])
+   => counts(mcx(4),x_gates(20))
+20. grover_iterations(9, 351)
+   => 0
+21. oracle([1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1])
+   => [mcx([n(0),n(1),n(2),n(3)]),mcx([x(0),n(1),x(2),x(3)]),mcx([x(0),x(1),x(2),x(3)])]
+22. run_oracle([mcx([x(0),n(1),x(2),n(3)]),mcx([x(0),x(1),n(2),x(3)])], 4, 0, 0)
+   => 0
+23. advantage([1,0,0,1,1,0,0,0,1,1,1,1,0,1,0,0])
+   => grover(queries(1),classical(9))
+24. gate_count([])
+   => counts(mcx(0),x_gates(0))
+25. grover_iterations(9, 122)
+   => 1
+26. oracle([0,0])
+   => []
+27. run_oracle([], 1, 1, 0)
+   => 0
+28. advantage([0,0,0,0,0,0,1,0])
+   => grover(queries(2),classical(8))
+29. gate_count([mcx([n(0)])])
+   => counts(mcx(1),x_gates(2))
+30. grover_iterations(6, 64)
+   => 0
+31. oracle([1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0])
+   => [mcx([n(0),n(1),n(2),n(3)]),mcx([x(0),n(1),x(2),x(3)])]
+32. run_oracle([mcx([n(0),n(1),n(2),n(3)]),mcx([n(0),n(1),x(2),n(3)]),mcx([x(0),n(1),x(2),n(3)]),mcx([x(0),x(1),x(2),n(3)]),mcx([x(0),n(1),x(2),x(3)])], 4, 9, 1)
+   => 1
+33. advantage([0,0,1,1])
+   => grover(queries(1),classical(3))
+34. gate_count([])
+   => counts(mcx(0),x_gates(0))
+35. grover_iterations(7, 121)
+   => 0
+36. oracle([0,1,0,1])
+   => [mcx([x(0),n(1)]),mcx([x(0),x(1)])]
+37. run_oracle([], 1, 1, 0)
+   => 0
+38. advantage([0,1,0,1,0,1,0,1])
+   => grover(queries(1),classical(5))
+39. gate_count([mcx([n(0),n(1),n(2),n(3)]),mcx([x(0),n(1),n(2),n(3)]),mcx([x(0),x(1),n(2),n(3)]),mcx([n(0),x(1),x(2),n(3)]),mcx([n(0),n(1),n(2),x(3)]),mcx([x(0),x(1),n(2),x(3)]),mcx([n(0),n(1),x(2),x(3)])])
+   => counts(mcx(7),x_gates(34))
+40. grover_iterations(6, 46)
+   => 0
+41. oracle([0,1])
+   => [mcx([x(0)])]
+42. run_oracle([mcx([n(0),n(1),x(2)])], 3, 6, 0)
+   => 0
+43. advantage([0,1,0,1,0,1,1,0,1,1,1,0,1,1,0,1])
+   => grover(queries(1),classical(7))
+44. gate_count([mcx([n(0),n(1),n(2),n(3)]),mcx([x(0),n(1),n(2),n(3)]),mcx([n(0),x(1),n(2),n(3)]),mcx([x(0),n(1),n(2),x(3)])])
+   => counts(mcx(4),x_gates(24))
+45. grover_iterations(6, 15)
+   => 1
+46. oracle([0,0])
+   => []
+47. run_oracle([mcx([x(0),n(1),n(2),n(3)]),mcx([x(0),x(1),n(2),n(3)]),mcx([n(0),x(1),x(2),n(3)]),mcx([x(0),n(1),n(2),x(3)])], 4, 14, 1)
+   => 1
+48. advantage([0,0,0,1,0,0,0,0,0,1,0,1,0,0,0,1])
+   => grover(queries(1),classical(13))
+49. gate_count([])
+   => counts(mcx(0),x_gates(0))
+50. grover_iterations(5, 1)
+   => 4
+51. oracle([0,0])
+   => []
+52. run_oracle([mcx([n(0),n(1),x(2),n(3)])], 4, 13, 1)
+   => 1
+53. advantage([1,1])
+   => classical(1)
+54. gate_count([])
+   => counts(mcx(0),x_gates(0))
+55. grover_iterations(9, 271)
+   => 1
+56. oracle([1,1,1,0])
+   => [mcx([n(0),n(1)]),mcx([x(0),n(1)]),mcx([n(0),x(1)])]
+57. run_oracle([mcx([x(0),x(1),n(2),x(3)])], 4, 3, 1)
+   => 1
+58. advantage([0,0])
+   => classical(3)
+59. gate_count([mcx([x(0),n(1)]),mcx([n(0),x(1)])])
+   => counts(mcx(2),x_gates(4))
+60. grover_iterations(3, 1)
+   => 2
+61. oracle([0,0,0,0,0,1,0,0])
+   => [mcx([x(0),n(1),x(2)])]
+62. run_oracle([mcx([x(0),n(1),n(2),n(3)]),mcx([x(0),n(1),x(2),n(3)]),mcx([n(0),x(1),x(2),n(3)]),mcx([x(0),x(1),x(2),n(3)]),mcx([n(0),n(1),n(2),x(3)]),mcx([n(0),n(1),x(2),x(3)]),mcx([n(0),x(1),x(2),x(3)]),mcx([x(0),x(1),x(2),x(3)])], 4, 0, 0)
+   => 0
+63. advantage([0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0])
+   => grover(queries(2),classical(15))
+64. gate_count([mcx([x(0),n(1),n(2),n(3)]),mcx([n(0),x(1),n(2),n(3)]),mcx([x(0),x(1),n(2),n(3)]),mcx([x(0),x(1),x(2),n(3)]),mcx([n(0),n(1),n(2),x(3)]),mcx([n(0),x(1),n(2),x(3)]),mcx([n(0),x(1),x(2),x(3)]),mcx([x(0),x(1),x(2),x(3)])])
+   => counts(mcx(8),x_gates(30))
+65. grover_iterations(9, 389)
+   => 0
+66. oracle([1,1,0,0,0,0,1,1,0,1,1,1,0,0,0,0])
+   => [mcx([n(0),n(1),n(2),n(3)]),mcx([x(0),n(1),n(2),n(3)]),mcx([n(0),x(1),x(2),n(3)]),mcx([x(0),x(1),x(2),n(3)]),mcx([x(0),n(1),n(2),x(3)]),mcx([n(0),x(1),n(2),x(3)]),mcx([x(0),x(1),n(2),x(3)])]
+67. run_oracle([], 2, 1, 0)
+   => 0
+68. advantage([0,0,0,1,0,1,1,0])
+   => grover(queries(1),classical(6))
+69. gate_count([mcx([n(0),n(1)])])
+   => counts(mcx(1),x_gates(4))
+70. grover_iterations(5, 32)
+   => 0
+71. oracle([1,0])
+   => [mcx([n(0)])]
+72. run_oracle([mcx([x(0),n(1),n(2)]),mcx([x(0),x(1),n(2)]),mcx([x(0),n(1),x(2)]),mcx([x(0),x(1),x(2)])], 3, 5, 0)
+   => 1
+73. advantage([0,0,0,0,1,1,1,1,1,0,1,1,1,0,0,0])
+   => grover(queries(1),classical(9))
+74. gate_count([])
+   => counts(mcx(0),x_gates(0))
+75. grover_iterations(7, 45)
+   => 1
+76. oracle([0,0,0,0])
+   => []
+77. run_oracle([], 1, 0, 1)
+   => 1
+78. advantage([0,0,1,0,1,0,1,0])
+   => grover(queries(1),classical(6))
+79. gate_count([mcx([x(0),n(1),n(2),n(3)]),mcx([x(0),n(1),x(2),n(3)]),mcx([n(0),n(1),n(2),x(3)])])
+   => counts(mcx(3),x_gates(16))
+80. grover_iterations(5, 26)
+   => 0
+81. oracle([1,0])
+   => [mcx([n(0)])]
+82. run_oracle([mcx([n(0),x(1),n(2)]),mcx([x(0),n(1),x(2)])], 3, 2, 1)
+   => 0
+83. advantage([0,0,0,1])
+   => grover(queries(1),classical(4))
+84. gate_count([mcx([n(0),x(1),n(2),n(3)]),mcx([x(0),x(1),n(2),n(3)]),mcx([n(0),n(1),n(2),x(3)])])
+   => counts(mcx(3),x_gates(16))
+85. grover_iterations(3, 0)
+   => 0
+86. oracle([0,1,0,0,0,1,0,1])
+   => [mcx([x(0),n(1),n(2)]),mcx([x(0),n(1),x(2)]),mcx([x(0),x(1),x(2)])]
+87. run_oracle([mcx([n(0),n(1),n(2),n(3)]),mcx([x(0),n(1),n(2),n(3)]),mcx([n(0),x(1),n(2),n(3)]),mcx([n(0),n(1),x(2),n(3)]),mcx([x(0),n(1),x(2),n(3)]),mcx([x(0),x(1),x(2),n(3)])], 4, 14, 1)
+   => 1
+88. advantage([0,0])
+   => classical(3)
+89. gate_count([])
+   => counts(mcx(0),x_gates(0))
+90. grover_iterations(1, 0)
+   => 0
+91. oracle([1,0,0,0,1,0,0,0,0,0,1,1,1,1,1,0])
+   => [mcx([n(0),n(1),n(2),n(3)]),mcx([n(0),n(1),x(2),n(3)]),mcx([n(0),x(1),n(2),x(3)]),mcx([x(0),x(1),n(2),x(3)]),mcx([n(0),n(1),x(2),x(3)]),mcx([x(0),n(1),x(2),x(3)]),mcx([n(0),x(1),x(2),x(3)])]
+92. run_oracle([mcx([n(0),n(1),n(2),n(3)]),mcx([n(0),n(1),x(2),n(3)]),mcx([n(0),n(1),n(2),x(3)]),mcx([x(0),n(1),n(2),x(3)]),mcx([n(0),x(1),x(2),x(3)])], 4, 9, 1)
+   => 0
+93. advantage([0,1,1,1,0,0,0,0])
+   => grover(queries(1),classical(6))
+94. gate_count([mcx([n(0),n(1)]),mcx([x(0),x(1)])])
+   => counts(mcx(2),x_gates(4))
+95. grover_iterations(4, 8)
+   => 1
+96. oracle([0,0,0,0,0,0,1,0])
+   => [mcx([n(0),x(1),x(2)])]
+97. run_oracle([], 1, 0, 0)
+   => 0
+98. advantage([0,0,0,0])
+   => classical(5)
+99. gate_count([mcx([n(0)])])
+   => counts(mcx(1),x_gates(2))
+100. grover_iterations(1, 1)
+   => 1
+101. oracle([1,1,1,0])
+   => [mcx([n(0),n(1)]),mcx([x(0),n(1)]),mcx([n(0),x(1)])]
+102. run_oracle([mcx([n(0),n(1)])], 2, 3, 1)
+   => 1
+103. advantage([0,0])
+   => classical(3)
+104. gate_count([mcx([x(0),n(1),n(2)]),mcx([x(0),x(1),x(2)])])
+   => counts(mcx(2),x_gates(4))
+105. grover_iterations(9, 126)
+   => 1
+106. oracle([0,1,0,0])
+   => [mcx([x(0),n(1)])]
+107. run_oracle([mcx([n(0),n(1)]),mcx([n(0),x(1)])], 2, 0, 1)
+   => 0
+108. advantage([0,0,0,1])
+   => grover(queries(1),classical(4))
+109. gate_count([mcx([n(0),n(1)]),mcx([x(0),x(1)])])
+   => counts(mcx(2),x_gates(4))
+110. grover_iterations(7, 49)
+   => 1
+111. oracle([0,0,0,0])
+   => []
+112. run_oracle([mcx([n(0),n(1),x(2),n(3)]),mcx([n(0),n(1),n(2),x(3)]),mcx([n(0),x(1),n(2),x(3)]),mcx([x(0),x(1),n(2),x(3)]),mcx([n(0),n(1),x(2),x(3)]),mcx([x(0),x(1),x(2),x(3)])], 4, 11, 1)
+   => 0
+113. advantage([1,1,1,1])
+   => classical(1)
+114. gate_count([mcx([n(0),n(1),n(2),n(3)]),mcx([n(0),n(1),x(2),n(3)]),mcx([n(0),x(1),x(2),n(3)]),mcx([x(0),x(1),x(2),n(3)]),mcx([n(0),x(1),n(2),x(3)])])
+   => counts(mcx(5),x_gates(24))
+115. grover_iterations(10, 218)
+   => 1
+116. oracle([1,1,0,0])
+   => [mcx([n(0),n(1)]),mcx([x(0),n(1)])]
+117. run_oracle([mcx([n(0),n(1),n(2)]),mcx([n(0),n(1),x(2)])], 3, 6, 0)
+   => 0
+118. advantage([1,0,1,0,1,1,0,0])
+   => grover(queries(1),classical(5))
+119. gate_count([mcx([n(0),x(1),n(2),x(3)]),mcx([x(0),x(1),x(2),x(3)])])
+   => counts(mcx(2),x_gates(4))
+120. grover_iterations(2, 3)
+   => 0
+121. oracle([0,1,0,0,0,0,0,0])
+   => [mcx([x(0),n(1),n(2)])]
+122. run_oracle([], 1, 0, 0)
+   => 0
+123. advantage([0,0,1,0,0,0,0,0])
+   => grover(queries(2),classical(8))
+124. gate_count([mcx([n(0),n(1)])])
+   => counts(mcx(1),x_gates(4))
+125. grover_iterations(3, 2)
+   => 1
+126. oracle([0,1,0,1])
+   => [mcx([x(0),n(1)]),mcx([x(0),x(1)])]
+127. run_oracle([mcx([n(0),n(1),n(2),n(3)]),mcx([x(0),x(1),n(2),n(3)]),mcx([n(0),x(1),x(2),n(3)]),mcx([n(0),x(1),n(2),x(3)])], 4, 9, 0)
+   => 0
+128. advantage([0,0,1,0])
+   => grover(queries(1),classical(4))
+129. gate_count([])
+   => counts(mcx(0),x_gates(0))
+130. grover_iterations(4, 13)
+   => 0
+131. oracle([0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0])
+   => [mcx([n(0),n(1),n(2),x(3)]),mcx([x(0),n(1),x(2),x(3)])]
+132. run_oracle([], 1, 1, 1)
+   => 1
+133. advantage([1,0,0,1,1,0,1,0,1,0,1,0,0,0,1,1])
+   => grover(queries(1),classical(9))
+134. gate_count([mcx([n(0),n(1),n(2),n(3)]),mcx([n(0),x(1),x(2),n(3)]),mcx([x(0),x(1),x(2),n(3)]),mcx([n(0),x(1),n(2),x(3)]),mcx([n(0),x(1),x(2),x(3)])])
+   => counts(mcx(5),x_gates(20))
+135. grover_iterations(1, 1)
+   => 1
+136. oracle([0,0])
+   => []
+137. run_oracle([mcx([n(0),n(1)]),mcx([x(0),n(1)])], 2, 0, 1)
+   => 0
+138. advantage([1,0,1,1,0,1,1,0,0,1,1,1,1,1,1,1])
+   => grover(queries(1),classical(5))
+139. gate_count([mcx([x(0),x(1),x(2),n(3)]),mcx([n(0),x(1),x(2),x(3)]),mcx([x(0),x(1),x(2),x(3)])])
+   => counts(mcx(3),x_gates(4))
+140. grover_iterations(5, 0)
+   => 0
+141. oracle([0,0,0,1,1,0,0,1,0,1,0,0,0,0,0,1])
+   => [mcx([x(0),x(1),n(2),n(3)]),mcx([n(0),n(1),x(2),n(3)]),mcx([x(0),x(1),x(2),n(3)]),mcx([x(0),n(1),n(2),x(3)]),mcx([x(0),x(1),x(2),x(3)])]
+142. run_oracle([], 1, 0, 1)
+   => 1
+143. advantage([1,1])
+   => classical(1)
+144. gate_count([])
+   => counts(mcx(0),x_gates(0))
+145. grover_iterations(2, 2)
+   => 1
+146. oracle([0,0,0,0,0,0,0,0])
+   => []
+147. run_oracle([], 1, 1, 0)
+   => 0
+148. advantage([1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1])
+   => grover(queries(2),classical(15))
+149. gate_count([mcx([n(0),n(1),x(2),n(3)]),mcx([x(0),x(1),x(2),n(3)]),mcx([x(0),n(1),n(2),x(3)])])
+   => counts(mcx(3),x_gates(12))
+150. grover_iterations(8, 23)
+   => 2
+151. oracle([0,0,0,0])
+   => []
+152. run_oracle([mcx([x(0)])], 1, 0, 1)
+   => 1
+153. advantage([0,0,0,0])
+   => classical(5)
+154. gate_count([mcx([x(0)])])
+   => counts(mcx(1),x_gates(0))
+155. grover_iterations(10, 150)
+   => 2
+156. oracle([1,0,1,0,0,1,1,1])
+   => [mcx([n(0),n(1),n(2)]),mcx([n(0),x(1),n(2)]),mcx([x(0),n(1),x(2)]),mcx([n(0),x(1),x(2)]),mcx([x(0),x(1),x(2)])]
+157. run_oracle([mcx([x(0),n(1),n(2),n(3)]),mcx([x(0),x(1),n(2),n(3)]),mcx([x(0),n(1),x(2),n(3)]),mcx([n(0),n(1),n(2),x(3)]),mcx([n(0),x(1),n(2),x(3)]),mcx([x(0),n(1),x(2),x(3)])], 4, 3, 1)
+   => 0
+158. advantage([0,0])
+   => classical(3)
+159. gate_count([mcx([n(0),n(1),n(2)]),mcx([n(0),x(1),n(2)]),mcx([x(0),x(1),n(2)]),mcx([n(0),x(1),x(2)])])
+   => counts(mcx(4),x_gates(14))
+160. grover_iterations(5, 32)
+   => 0
+161. oracle([0,1,1,0,0,0,0,0,0,1,0,0,0,1,0,0])
+   => [mcx([x(0),n(1),n(2),n(3)]),mcx([n(0),x(1),n(2),n(3)]),mcx([x(0),n(1),n(2),x(3)]),mcx([x(0),n(1),x(2),x(3)])]
+162. run_oracle([mcx([n(0),n(1),n(2),n(3)]),mcx([x(0),x(1),x(2),n(3)])], 4, 3, 0)
+   => 0
+163. advantage([0,0])
+   => classical(3)
+164. gate_count([mcx([n(0),x(1),n(2),n(3)]),mcx([n(0),n(1),x(2),n(3)]),mcx([x(0),n(1),x(2),n(3)]),mcx([x(0),x(1),x(2),n(3)]),mcx([n(0),n(1),x(2),x(3)]),mcx([x(0),x(1),x(2),x(3)])])
+   => counts(mcx(6),x_gates(22))
+165. grover_iterations(9, 402)
+   => 0
+166. oracle([0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1])
+   => [mcx([n(0),x(1),x(2),x(3)]),mcx([x(0),x(1),x(2),x(3)])]
+167. run_oracle([], 1, 0, 0)
+   => 0
+168. advantage([0,0])
+   => classical(3)
+169. gate_count([mcx([n(0),n(1),n(2),n(3)]),mcx([n(0),x(1),x(2),n(3)]),mcx([n(0),n(1),n(2),x(3)]),mcx([n(0),n(1),x(2),x(3)]),mcx([x(0),n(1),x(2),x(3)]),mcx([n(0),x(1),x(2),x(3)])])
+   => counts(mcx(6),x_gates(26))
+170. grover_iterations(2, 2)
+   => 1
+171. oracle([0,0])
+   => []
+172. run_oracle([], 1, 0, 0)
+   => 0
+173. advantage([0,0,1,1])
+   => grover(queries(1),classical(3))
+174. gate_count([mcx([n(0),x(1),n(2),n(3)]),mcx([x(0),n(1),x(2),n(3)]),mcx([x(0),x(1),x(2),n(3)]),mcx([n(0),n(1),n(2),x(3)]),mcx([x(0),x(1),n(2),x(3)]),mcx([x(0),n(1),x(2),x(3)]),mcx([x(0),x(1),x(2),x(3)])])
+   => counts(mcx(7),x_gates(22))
+175. grover_iterations(6, 57)
+   => 0
+176. oracle([0,0])
+   => []
+177. run_oracle([], 2, 0, 0)
+   => 0
+178. advantage([0,0,0,1,0,0,0,0])
+   => grover(queries(2),classical(8))
+179. gate_count([mcx([x(0),n(1),n(2),n(3)]),mcx([n(0),n(1),n(2),x(3)]),mcx([x(0),x(1),n(2),x(3)]),mcx([n(0),n(1),x(2),x(3)])])
+   => counts(mcx(4),x_gates(18))
+180. grover_iterations(7, 99)
+   => 0
+181. oracle([0,0,1,0,0,0,0,1,0,0,0,0,1,0,1,0])
+   => [mcx([n(0),x(1),n(2),n(3)]),mcx([x(0),x(1),x(2),n(3)]),mcx([n(0),n(1),x(2),x(3)]),mcx([n(0),x(1),x(2),x(3)])]
+182. run_oracle([mcx([n(0),n(1),x(2),n(3)]),mcx([x(0),n(1),x(2),n(3)]),mcx([n(0),n(1),n(2),x(3)]),mcx([x(0),n(1),n(2),x(3)]),mcx([n(0),n(1),x(2),x(3)]),mcx([n(0),x(1),x(2),x(3)])], 4, 12, 0)
+   => 1
+183. advantage([0,0,0,0,1,0,0,1,1,0,0,0,1,0,0,0])
+   => grover(queries(1),classical(13))
+184. gate_count([mcx([n(0),x(1)])])
+   => counts(mcx(1),x_gates(2))
+185. grover_iterations(10, 760)
+   => 0
+186. oracle([1,0,0,0,0,0,0,0])
+   => [mcx([n(0),n(1),n(2)])]
+187. run_oracle([mcx([n(0),n(1)]),mcx([x(0),n(1)]),mcx([n(0),x(1)]),mcx([x(0),x(1)])], 2, 2, 0)
+   => 1
+188. advantage([0,1])
+   => grover(queries(1),classical(2))
+189. gate_count([mcx([x(0),n(1),n(2)])])
+   => counts(mcx(1),x_gates(4))
+190. grover_iterations(8, 223)
+   => 0
+191. oracle([0,0,0,0,0,1,0,0,0,1,1,0,1,0,1,1])
+   => [mcx([x(0),n(1),x(2),n(3)]),mcx([x(0),n(1),n(2),x(3)]),mcx([n(0),x(1),n(2),x(3)]),mcx([n(0),n(1),x(2),x(3)]),mcx([n(0),x(1),x(2),x(3)]),mcx([x(0),x(1),x(2),x(3)])]
+192. run_oracle([mcx([x(0),x(1),x(2)])], 3, 6, 1)
+   => 1
+193. advantage([0,0,0,1])
+   => grover(queries(1),classical(4))
+194. gate_count([])
+   => counts(mcx(0),x_gates(0))
+195. grover_iterations(3, 8)
+   => 0
+196. oracle([1,0,0,1,0,0,0,0])
+   => [mcx([n(0),n(1),n(2)]),mcx([x(0),x(1),n(2)])]
+197. run_oracle([mcx([n(0),n(1),n(2),n(3)]),mcx([x(0),n(1),n(2),n(3)]),mcx([n(0),n(1),x(2),n(3)]),mcx([x(0),x(1),x(2),n(3)]),mcx([n(0),n(1),n(2),x(3)]),mcx([n(0),x(1),n(2),x(3)]),mcx([x(0),n(1),x(2),x(3)]),mcx([x(0),x(1),x(2),x(3)])], 4, 12, 1)
+   => 1
+198. advantage([1,0])
+   => grover(queries(1),classical(2))
+199. gate_count([])
+   => counts(mcx(0),x_gates(0))
+200. grover_iterations(3, 2)
+   => 1
