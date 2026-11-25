@@ -29,3 +29,11 @@ theorem(advantage_is_honest) :-
 % 5. The X-gate count is twice the number of zero-controls (one X before and one after each).
 theorem(x_gates_wrap_zero_controls) :-
     forall(( table(_, T), oracle(T, C) ), ( gate_count(C, counts(_, x_gates(X))), findall(c, ( member(mcx(Cs), C), member(n(_), Cs) ), Zs), length(Zs, Z), X =:= 2 * Z )).
+
+% 6. The merged oracle computes the function with no more gates than one per marked input, its gates never
+%    fire together, and Grover's chance of success is a proper chance, reaching certainty for one marked input in four.
+theorem(merged_oracle_is_correct_and_smaller) :-
+    forall(( table(N, T), oracle_merged(T, C) ), ( forall(nth0(X, T, F), run_oracle(C, N, X, 0, F)), marked(T, M), length(C, G), G =< M,
+        forall(nth0(X, T, _), ( include([mcx(Cs)]>>forall(member(Ct, Cs), renn2q:fires(Ct, X)), C, Fired), length(Fired, K), K =< 1 )) )),
+    forall(( table(N, T), marked(T, M), M > 0, grover_iterations(N, M, K) ), ( success_permille(N, M, K, P), P >= 0, P =< 1000 )),
+    success_permille(2, 1, 1, 1000), success_permille(3, 1, 2, 945).

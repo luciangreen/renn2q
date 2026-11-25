@@ -5,7 +5,9 @@
 %?- oracle([0,1,1,0], C).                          % C = [mcx([x(0),n(1)]), mcx([n(0),x(1)])]: XOR on 2 bits
 %?- run_oracle(C, 2, 1, 0, Y).                     % Y = 1: f(01) = 1 written into the target
 %?- advantage([0,0,0,0,0,0,0,1], A).               % A = grover(queries(2), classical(8))
-:- module(renn2q, [oracle/2, run_oracle/5, bit/3, marked/2, grover_iterations/3, advantage/2, gate_count/2]).
+%?- success_permille(3, 1, 2, P).                  % P = 945: two iterations find it 94.5% of the time
+%?- oracle_merged([0,1,1,1], C).                   % C = [mcx([n(0),x(1)]), mcx([x(0)])]: two gates for or, not three
+:- module(renn2q, [oracle_merged/2, success_permille/4, oracle/2, run_oracle/5, bit/3, marked/2, grover_iterations/3, advantage/2, gate_count/2]).
 :- use_module(library(lists)).
 :- use_module(library(apply)).
 
@@ -34,5 +36,16 @@ grover_iterations(N, M, K) :- ( M =:= 0 -> K = 0 ; K is floor(pi / 4 * sqrt((1 <
 advantage(T, A) :- length(T, L), nbits(L, N), marked(T, M),
     W is L - M + 1, grover_iterations(N, M, K0), K is max(1, K0),
     ( M > 0, K < W -> A = grover(queries(K), classical(W)) ; A = classical(W) ).
+
+% oracle_merged(+Table, -Circuit): the same oracle with fewer gates. Two gates whose controls are the same
+% except that one needs bit I to be 1 and the other 0 are replaced by one gate without that control, again and
+% again. The gates stay disjoint (no input fires two), so the target is still flipped exactly when f = 1.
+oracle_merged(T, C) :- oracle(T, C0), maplist([mcx(Cs), S]>>msort(Cs, S), C0, Cubes0), merge_cubes(Cubes0, Cubes), maplist([Cs, mcx(Cs)]>>true, Cubes, C).
+merge_cubes(Cs0, Cs) :- ( select(A, Cs0, R1), select(B, R1, R2), one_apart(A, B, M) -> merge_cubes([M|R2], Cs1), msort(Cs1, Cs) ; msort(Cs0, Cs) ).
+one_apart(A, B, M) :- select(x(I), A, Rest), select(n(I), B, Rest2), Rest == Rest2, M = Rest.
+
+% success_permille(+N, +M, +K, -P): the chance, in thousandths, that K Grover iterations on 2^N inputs with M
+% marked find a marked one: sin^2((2K + 1) * asin(sqrt(M / 2^N))), rounded.
+success_permille(N, M, K, P) :- ( M =:= 0 -> P = 0 ; Th is asin(sqrt(M / (1 << N))), P is round(1000 * sin((2 * K + 1) * Th) ** 2) ).
 
 gate_count(C, counts(mcx(G), x_gates(X))) :- length(C, G), foldl([mcx(Cs), A, B]>>( include([Ct]>>(Ct = n(_)), Cs, Ns), length(Ns, K), B is A + 2 * K ), C, 0, X).
